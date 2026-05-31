@@ -1,12 +1,9 @@
-pub fn insertion_sort(x: &mut [i32]) -> &mut [i32] {
+pub fn insertion_sort(x: &mut [i32]) {
     for i in 1..x.len() {
-        let key = x[i];
-        let mut j = i - 1;
-        while (j > 0) && (x[j] > key) {
-            x[j + 1] = x[j];
+        let mut j = i;
+        while j > 0 && x[j - 1] > x[j] {
+            x.swap(j - 1, j);
             j -= 1;
         }
-        x[j + 1] = key;
     }
-    x
 }
