@@ -59,6 +59,7 @@ pub fn merge_sort(arr: &mut [i32], p: usize, r: usize) {
     merge_sort(arr, q + 1, r);
     merge(arr, p, q, r);
 }
+
 #[cfg(test)]
 mod tests {
     use super::*;
