@@ -67,9 +67,10 @@ mod tests {
     #[test]
     fn test_merge_sort() {
         let mut arr = [2, 5, 1, 6, 4, 3, 8, 7];
-        if let Some(r) = arr.len().checked_sub(1) {
-            merge_sort(&mut arr, 0, r);
-        }
+        let r = arr.len() - 1;
+        merge_sort(&mut arr, 0, r);
+        assert_eq!(arr, [1, 2, 3, 4, 5, 6, 7, 8]);
+    }
 
         assert_eq!(arr, [1, 2, 3, 4, 5, 6, 7, 8]);
     }
