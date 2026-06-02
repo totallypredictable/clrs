@@ -1,5 +1,5 @@
 #[allow(dead_code)]
-pub fn insertion_sort(x: &mut [i32], reverse: bool) -> &mut [i32] {
+pub fn insertion_sort<T: PartialOrd>(x: &mut [T], reverse: bool) {
     for i in 1..x.len() {
         let mut j = i;
         while j > 0
@@ -13,7 +13,6 @@ pub fn insertion_sort(x: &mut [i32], reverse: bool) -> &mut [i32] {
             j -= 1;
         }
     }
-    x
 }
 
 fn merge(arr: &mut [i32], p: usize, q: usize, r: usize) {
