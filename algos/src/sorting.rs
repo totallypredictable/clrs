@@ -72,6 +72,17 @@ mod tests {
         assert_eq!(arr, [1, 2, 3, 4, 5, 6, 7, 8]);
     }
 
+    #[test]
+    fn test_insertion_sort() {
+        let mut arr = [2, 5, 1, 6, 4, 3, 8, 7];
+        insertion_sort(&mut arr, false);
         assert_eq!(arr, [1, 2, 3, 4, 5, 6, 7, 8]);
+    }
+
+    #[test]
+    fn test_reverse_insertion_sort() {
+        let mut arr = [2, 5, 1, 6, 4, 3, 8, 7];
+        insertion_sort(&mut arr, true);
+        assert_eq!(arr, [8, 7, 6, 5, 4, 3, 2, 1]);
     }
 }
