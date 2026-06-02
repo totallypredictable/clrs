@@ -59,3 +59,17 @@ pub fn merge_sort(arr: &mut [i32], p: usize, r: usize) {
     merge_sort(arr, q + 1, r);
     merge(arr, p, q, r);
 }
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_merge_sort() {
+        let mut arr = [2, 5, 1, 6, 4, 3, 8, 7];
+        if let Some(r) = arr.len().checked_sub(1) {
+            merge_sort(&mut arr, 0, r);
+        }
+
+        assert_eq!(arr, [1, 2, 3, 4, 5, 6, 7, 8]);
+    }
+}
