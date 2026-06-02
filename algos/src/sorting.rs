@@ -1,3 +1,4 @@
+#[allow(dead_code)]
 pub fn insertion_sort(x: &mut [i32], reverse: bool) -> &mut [i32] {
     for i in 1..x.len() {
         let mut j = i;
